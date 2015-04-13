@@ -232,34 +232,48 @@ mult_numbers([1, 2, 3])
 mult_numbers([10, 20, 0, 50])
 mult_numbers([])
 
-# def join_strings(word_list):
-#     """Return a string of all input strings joined together.
+def join_strings(word_list):
+    """Return a string of all input strings joined together.
 
-#     Python ha a built-in method on lists, `join` -- but this exercise, you
-#     should not use it.
+    Python ha a built-in method on lists, `join` -- but this exercise, you
+    should not use it.
 
-#         >>> join_strings(["spam", "spam", "bacon", "balloonicorn"])
-#         'spamspambaconballoonicorn'
+        >>> join_strings(["spam", "spam", "bacon", "balloonicorn"])
+        'spamspambaconballoonicorn'
 
-#     For an empty list, you should return an empty string:
+    For an empty list, you should return an empty string:
 
-#         >>> join_strings([])
-#         ''
+        >>> join_strings([])
+        ''
 
-#     """
-#     return ""
+    """
+    words_joined = ""
+    for w in word_list:
+        words_joined = words_joined + w
 
+    return words_joined
 
-# def average(number_list):
-#     """Return the average (mean) of the list of numbers given.
+join_strings(["spam", "spam", "bacon", "balloonicorn"])
+join_strings([])
 
-#         >>> average([2, 12, 3])
-#         5.666666666666667
+def average(number_list):
+    """Return the average (mean) of the list of numbers given.
 
-#     There is no defined answer if the list given is empty. It's fine if
-#     this raises an error when given an empty list.
-#     """
-#     return 0
+        >>> average([2, 12, 3])
+        5.666666666666667
+
+    There is no defined answer if the list given is empty. It's fine if
+    this raises an error when given an empty list.
+    """
+    summed = 0.0
+
+    for num in number_list:
+        summed = summed + float(num)
+
+    avg = summed / float(len(number_list))
+    return avg
+
+average([2, 12, 3])
 
 
 # ##############################################################################
