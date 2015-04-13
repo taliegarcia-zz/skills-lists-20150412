@@ -319,9 +319,7 @@ def adv_find_unique_long_words(my_string):
     my_string_list = my_string.rstrip().split(" ") # first split into list of strings
     
     single_occur = []
-    # single_occur = single_occur.append(w for w in my_string_list)
-    
-    # not working -- new_list = new_list.append(w for w in my_string_list if w not in new_list)
+    # not working -- single_occur = single_occur.append(w for w in my_string_list)
     
     for w in my_string_list:
         if w in single_occur:
@@ -330,6 +328,8 @@ def adv_find_unique_long_words(my_string):
             single_occur.append(w)
 
     long_words =[]
+    # stripped_words = ".,".rstrip(w for w in single_occur)
+    # long_words = long_words.append(w for w in single_occur if len(w) >= 6)
     for w in single_occur:
         w = w.strip(".,")
         if len(w) >= 6:
