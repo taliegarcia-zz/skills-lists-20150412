@@ -87,8 +87,8 @@ def long_words(word_list):
 
     return long_word_list
 
-print long_words(["hello", "hey", "spam", "spam", "bacon", "bacon"])
-print long_words(["all", "are", "tiny"])
+long_words(["hello", "hey", "spam", "spam", "bacon", "bacon"])
+long_words(["all", "are", "tiny"])
 
 
 def smallest_int(number_list):
@@ -138,34 +138,44 @@ def largest_int(number_list):
 
     return largest
 
-print largest_int([-5, 2, -5, 7])
-print largest_int([])
-# def halvesies(number_list):
-#     """Return list of numbers from input list, each divided by two.
+largest_int([-5, 2, -5, 7])
+largest_int([])
 
-#         >>> halvesies([2, 6, -2])
-#         [1.0, 3.0, -1.0]
+def halvesies(number_list):
+    """Return list of numbers from input list, each divided by two.
 
-#     If any of the numbers are, make sure you don't round off the half:
+        >>> halvesies([2, 6, -2])
+        [1.0, 3.0, -1.0]
 
-#         >>> halvesies([1, 5])
-#         [0.5, 2.5]
+    If any of the numbers are floats, make sure you don't round off the half:
 
-#     """
+        >>> halvesies([1, 5])
+        [0.5, 2.5]
 
-#     return []
+    """
+    halved_list = []
+    for num in number_list:
+        halved_list.append(float(num) / 2.0)
 
+    return halved_list
 
-# def word_lengths(word_list):
-#     """Return the length of words in the input list.
+halvesies([2, 6, -2])
+halvesies([1, 5])
 
-#         >>> word_lengths(["hello", "hey", "hello", "spam"])
-#         [5, 3, 5, 4]
+def word_lengths(word_list):
+    """Return the length of words in the input list.
 
-#     """
+        >>> word_lengths(["hello", "hey", "hello", "spam"])
+        [5, 3, 5, 4]
 
-#     return []
+    """
+    length_list = []
+    for word in word_list:
+        length_list.append(len(word))
 
+    return length_list
+
+word_lengths(["hello", "hey", "hello", "spam"])
 
 # def sum_numbers(number_list):
 #     """Return the sum of all of the numbers in the list.
