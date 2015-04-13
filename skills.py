@@ -70,18 +70,25 @@ def print_indeces(my_list):
 
 print_indeces(["Toyota", "Jeep", "Volvo"])
 
-# def long_words(word_list):
-#     """Return all words in input list that are longer than 4 characters.
+def long_words(word_list):
+    """Return all words in input list that are longer than 4 characters.
 
-#         >>> long_words(["hello", "hey", "spam", "spam", "bacon", "bacon"])
-#         ['hello', 'bacon', 'bacon']
+        >>> long_words(["hello", "hey", "spam", "spam", "bacon", "bacon"])
+        ['hello', 'bacon', 'bacon']
 
-#         >>> long_words(["all", "are", "tiny"])
-#         []
+        >>> long_words(["all", "are", "tiny"])
+        []
 
-#     """
+    """
+    long_word_list = []
+    for string in word_list:
+        if len(string) > 4:
+            long_word_list.append(string)
 
-#     return []
+    return long_word_list
+
+print long_words(["hello", "hey", "spam", "spam", "bacon", "bacon"])
+print long_words(["all", "are", "tiny"])
 
 
 # def smallest_int(number_list):
