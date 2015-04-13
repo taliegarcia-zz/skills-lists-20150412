@@ -1,5 +1,5 @@
 # To work on the intermediate problems, set to True
-INTERMEDIATE = False
+INTERMEDIATE = True 
 
 # To work on the advanced problems, set to True
 ADVANCED = True
@@ -277,36 +277,65 @@ average([2, 12, 3])
 
 
 # ##############################################################################
-# # END OF SKILLS TEST; YOU CAN STOP HERE.
+# END OF SKILLS TEST; YOU CAN STOP HERE.
 
 
-# def intermediate_join_strings(list_of_words):
-#     """Return a single string with each word from the input list
-#     separated by a comma.
+def intermediate_join_strings(list_of_words):
+    """Return a single string with each word from the input list
+    separated by a comma.
 
-#     Do this with a list comprehension. See
-#     https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
-#     for more info.
+    Do this with a list comprehension. See
+    https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
+    for more info.
 
-#     >>> intermediate_join_strings(["Labrador", "Poodle", "French Bulldog"])
-#     'Labrador, Poodle, French Bulldog'
+    >>> intermediate_join_strings(["Labrador", "Poodle", "French Bulldog"])
+    'Labrador, Poodle, French Bulldog'
 
-#     As above, if the list given is empty, it's fine if this function
-#     raises an error.
-#     """
-#     return ""
+    As above, if the list given is empty, it's fine if this function
+    raises an error.
+    """
 
+    new_string = "'" + ", ".join(w for w in list_of_words) + "'" # I don't know why the single quotes around this string were important, but this is how I got it to work
+    # whoa amazing list comprehension!!
+    # since I want to return a string, I don't need the [] for the comprehension
+    # the .join method is cool.
+    # the actual method is str(w) for w in list_of_words
+    # so for each w in list_of_words, return as a string value
+    # .join tells it to join together...with ', ' as per instructions
+    print new_string
 
-# def adv_find_unique_long_words(my_string):
-#     """Return a list of words that only appeared only once
-#     within the input string and are at least 6 characters long.
+intermediate_join_strings(["Labrador", "Poodle", "French Bulldog"])
 
-#     >>> adv_find_unique_long_words("I ate popcorn, more popcorn, nachos, kale, and coffee.")
-#     ['nachos', 'coffee']
+def adv_find_unique_long_words(my_string):
+    """Return a list of words that only appeared only once
+    within the input string and are at least 6 characters long.
 
-#     """
-#     return []
+    >>> adv_find_unique_long_words("I ate popcorn, more popcorn, nachos, kale, and coffee.")
+    ['nachos', 'coffee']
 
+    """
+    # my_string_set = set(my_string) # does not work, returns each letter as item
+    # set is also not helpful because I need to see if a word IS occuring more than once
+    my_string_list = my_string.rstrip().split(" ") # first split into list of strings
+    
+    single_occur = []
+    # single_occur = single_occur.append(w for w in my_string_list)
+    
+    # not working -- new_list = new_list.append(w for w in my_string_list if w not in new_list)
+    
+    for w in my_string_list:
+        if w in single_occur:
+            single_occur.pop(my_string_list.index(w))
+        else:
+            single_occur.append(w)
+
+    long_words =[]
+    for w in single_occur:
+        w = w.strip(".,")
+        if len(w) >= 6:
+            long_words.append(w)
+    
+    print long_words
 
 ##############################################################################
 # You can ignore everything after here
