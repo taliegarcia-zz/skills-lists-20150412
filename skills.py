@@ -91,38 +91,55 @@ print long_words(["hello", "hey", "spam", "spam", "bacon", "bacon"])
 print long_words(["all", "are", "tiny"])
 
 
-# def smallest_int(number_list):
-#     """Find the smallest integer in a list of integers and return it.
+def smallest_int(number_list):
+    """Find the smallest integer in a list of integers and return it.
 
-#         >>> smallest_int([-5, 2, -5, 7])
-#         -5
+        >>> smallest_int([-5, 2, -5, 7])
+        -5
 
-#     If the input list is empty, return None:
+    If the input list is empty, return None:
 
-#         >>> smallest_int([]) is None
-#         True
+        >>> smallest_int([]) is None
+        True
 
-#     """
+    """
+    if number_list == []:
+        smallest = None # None can be used in boolean too! 
+            # could have starte diwth comparing all nums to smallest = None, and 
+            # python would know that integers are greater than none!
+    else:
+        number_list.sort()
+        smallest = number_list[0] # need square brackets for list index #
 
-#     return 100
+    return smallest
 
+smallest_int([-5, 2, -5, 7])
+smallest_int([])
 
-# def largest_int(number_list):
-#     """Find the largest integer in a list of integers and return it.
+def largest_int(number_list):
+    """Find the largest integer in a list of integers and return it.
 
-#         >>> largest_int([-5, 2, -5, 7])
-#         7
+        >>> largest_int([-5, 2, -5, 7])
+        7
 
-#     If the input list is empty, return None:
+    If the input list is empty, return None:
 
-#         >>> largest_int([]) is None
-#         True
+        >>> largest_int([]) is None
+        True
 
-#     """
+    """
+    if number_list == []:
+        largest = None # None can be used in boolean too! 
+            # could have starte diwth comparing all nums to smallest = None, and 
+            # python would know that integers are greater than none!
+    else:
+        number_list.reverse()
+        largest = number_list[0] # need square brackets for list index #
 
-#     return 0
+    return largest
 
-
+print largest_int([-5, 2, -5, 7])
+print largest_int([])
 # def halvesies(number_list):
 #     """Return list of numbers from input list, each divided by two.
 
