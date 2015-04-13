@@ -23,41 +23,52 @@ def all_odd(number_list):
 
     return odd_list
 
-# def all_even(number_list):
-#     """Return a list of only the even numbers in the input list.
+all_odd([1, 2, 7, -5])
+all_odd([2, -6, 8])
 
-#         >>> all_even([2, 6, -1, -2])
-#         [2, 6, -2]
+def all_even(number_list):
+    """Return a list of only the even numbers in the input list.
 
-#         >>> all_even([-1, 3, 5])
-#         []
+        >>> all_even([2, 6, -1, -2])
+        [2, 6, -2]
 
-#     """
+        >>> all_even([-1, 3, 5])
+        []
 
-#     return []
+    """
+    even_list = []
+    for num in number_list:
+        if num % 2 == 0:
+            even_list.append(num)
 
 
-# def print_indeces(my_list):
-#     """Print the index of each list item, followed by the item itself.
-#     Do this without using a counting variable. I.e. don't do something
-#     like this:
+    return even_list
 
-#     count = 0
-#     for item in list:
-#         print count
-#         count = count + 1
+all_even([2, 6, -1, -2])
+all_even([-1, 3, 5])
 
-#     Output should look like this:
+def print_indeces(my_list):
+    """Print the index of each list item, followed by the item itself.
+    Do this without using a counting variable. I.e. don't do something
+    like this:
 
-#     >>> print_indeces(["Toyota", "Jeep", "Volvo"])
-#     0 Toyota
-#     1 Jeep
-#     2 Volvo
+    count = 0
+    for item in list:
+        print count
+        count = count + 1
 
-#     """
-#     print "Nothing at all"
-#     pass
+    Output should look like this:
 
+    >>> print_indeces(["Toyota", "Jeep", "Volvo"])
+    0 Toyota
+    1 Jeep
+    2 Volvo
+
+    """    
+    for item in my_list:
+        print my_list.index(item), item  
+
+print_indeces(["Toyota", "Jeep", "Volvo"])
 
 # def long_words(word_list):
 #     """Return all words in input list that are longer than 4 characters.
